@@ -38,10 +38,14 @@ class ResultScreenState extends State<ResultScreen> {
                   switch (snapshot.connectionState) {
                     case ConnectionState.done:
                       final response = snapshot.data;
-                      return firstElement(response);
+                      return buildCard(response);
                       break;
                     default:
-                      return null;
+                      return Container(
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      );
                   }
                 },
               ),
@@ -79,7 +83,7 @@ class ResultScreenState extends State<ResultScreen> {
     );
   }
 
-  Widget firstElement(List<DataModel> dataModel) {
+  Widget buildCard(List<DataModel> dataModel) {
     return ListView.builder(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,

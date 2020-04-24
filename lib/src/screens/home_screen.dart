@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
         aspectRatio: 353 / yRatio,
         child: Container(
           decoration: BoxDecoration(
-            color: Color(0xFF52A088),
+            color: Color(wOneData1['color']),
             borderRadius: BorderRadius.circular(25),
             boxShadow: [
               BoxShadow(
